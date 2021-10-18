@@ -1,0 +1,1 @@
+console.log(MY_MAGIC_NUMBER)
