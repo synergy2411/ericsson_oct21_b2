@@ -1,3 +1,5 @@
+# Github Repo Link : https://github.com/synergy2411/ericsson_oct21_b2
+
 # What is JavaScript?
 - Scripting language
 - runs on browser (Client side JS)
@@ -11,6 +13,11 @@
 - script enabled
 - Non-blocking / Asynchronous : Ember, Angular, React, VueJS, Backbone, knockout, D3, jQuery etc 
 - Vanilla JS
+
+# Functions - Callback, HOF, Nested Functions, Function Hoisting, Constructor, IIFE
+# Prototype - 
+# Closures, Scope chaining, Lexical scope
+
 
 # What is ES6?
 - ECMA specification for latest JS
@@ -69,3 +76,7 @@ ECMA Specification
 - Promises
 - Async...await
 - Observable
+
+
+
+# to install nodemon - > npm install nodemon -g

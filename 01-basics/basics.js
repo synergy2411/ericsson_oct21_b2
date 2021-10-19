@@ -116,6 +116,7 @@ console.clear();
 
 
 // Closure -> Process of binding the outer scope variable with the nested function;
+
 // function xyz(){
 //     var x = 3;
 //     return function(){
