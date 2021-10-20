@@ -26,7 +26,7 @@ const DUMMY_NOTES = [
   {
     id: "n4",
     title: "planting",
-    amount: 21.9,
+    amount: "21.9",
     createdAt: new Date(2019, 6, 5),
   },
 ];

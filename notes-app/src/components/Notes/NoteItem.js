@@ -1,4 +1,5 @@
 import NoteDate from './NoteDate';
+import PropTypes from 'prop-types';
 
 const NoteItem = (props) => {
   return (
@@ -8,13 +9,19 @@ const NoteItem = (props) => {
           <h4 className="text-center">{props.title.toUpperCase()}</h4>
         </div>
         <div className="card-body">
-          <p className="lead">Amount : {props.amount}</p>
+          <p className="lead">Amount : ${props.amount}</p>
             <NoteDate createdAt = {props.createdAt}/>
         </div>
       </div>
     </div>
   );
 };
+
+NoteItem.propTypes = {
+  title : PropTypes.string,
+  amount : PropTypes.number,
+  createdAt : PropTypes.instanceOf(Date)
+}
 
 export default NoteItem;
 

@@ -80,3 +80,122 @@ ECMA Specification
 
 
 # to install nodemon - > npm install nodemon -g
+
+
+
+
+# What is React ?
+- Client-side JavaScript Library
+- Can create Single Page App
+- Interactive UI
+- light-weight
+- Fast, Efficient
+- Components based (reusable piece of code)
+- Creates UI
+- Virtual DOM
+- 
+
+# Framework / Library
+- Angular* - Framework, set of API to follow; combo of various libraries - 
+    : package.json -> rxjs, zonejs, @angular/core, @angular/forms etc
+    : Enterprise level app
+    : HttpClientModule
+    : Service
+    : Built-in Validators
+    : MVC
+    : 2 way data binding ; built-in [(ngModel)]
+    : Heavy framework;
+    : AoT Compilation
+    : Tree-shaking
+    : Ivy
+    : ngcc
+
+
+- React - Library - Fast, Efficient for UI Update, 'View' Part of MVC, 
+    : jQuery, axios etc
+    : Redux, Flux
+    : Form Validation
+    : React router
+
+- jQuery - Library - DOM Manipulation, AJAX Call, Animation
+- VueJS - Evan You; Virtual DOM, Declarative Approach, Components, State Management (vuex)
+- Polymer - Custom components
+- BackboneJS - client side MVC
+- Knockout - MVVM, 2 way data binding
+- Ember* - Framework; Frequent API changes
+
+
+
+
+
+# Angular Testing
+- TestBed
+- Fixture
+- CompInstance
+- DebugElement
+- HttpClientTestingModule
+- HttpTestingController
+- RouterTestingModule
+- Deep / Shallow Testing
+- E2E Tests
+
+# Karma, Jasmine, Protector
+
+# Jest, Enzyme -> Jasmine API's Specs, spyOn
+
+# to create react project
+> npx create-react-app notes-app
+> cd notes-app
+> npm start
+
+# to install bootstrap
+> npm install bootstrap@4
+
+# Real DOM
+html
+    head
+        title
+        script
+        meta
+    body
+        div
+            p
+            ul
+                li
+
+# Virtual DOM - does not exist, in memory, only JS,
+
+-> Component -> JSX -> JavaScript -> Virtual DOM -> Real DOM 
+    -> Model change -> Current VDOM -> Prev VDOM -> Real DOM
+
+
+# Props - way of component (Parent & Child) communication
+
+# Atomic Design - Web designing
+- Atom - Smallest unit eg. a button, an input, a link etc
+- Molecules - Combo of atoms eg. searchbar -> inputbox + button
+- Organism - Combo of molecules eg. navbar -> multiple links + search bar
+- Templates - Combo of organism eg. Registration Form
+- Pages - complete page
+
+# Thinking in React way
+# Lifting-up the state
+# Nested Child Component Communication
+# Managing the State - Component level
+# User Input
+# Props & State
+
+# Component Types (prior to v16.8)
+- Functional Component - Presentational | Stateless | Dump
+- Class based component - Container | Stateful | Smart
+
+# Hooks
+- useState()
+- useEffect() - componentDidMount | componentDidUpdate | componentWillUnmount,
+- useReducer()
+- UseContext()
+- useParams()
+
+
+# Main job of React Library -> to render the UI, if model changes, update the UI accordingly.
+# Side Effect - XHR Call, reading, writing, changing the state etc
