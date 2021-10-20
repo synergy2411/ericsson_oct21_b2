@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import FilteredYear from "./FilterYear/FilteredYear";
 import AddNew from "./NewNote/AddNew";
 import NoteItem from "./NoteItem";
+import './Notes.css'
 
 const DUMMY_NOTES = [
   {
@@ -32,43 +34,48 @@ const DUMMY_NOTES = [
 function Notes() {
   
   const [notes, setNotes] = useState(DUMMY_NOTES);
+  const [showForm, setShowForm ] = useState(false);
+  const [selectedYear, setSelectedYear] = useState('2020');
 
   const onSaveNote = (note) => {
     setNotes([note, ...notes])
-    // notes.push(note)
-    // notes = [note, ...notes];
-    // console.log(notes)
   }
 
-  return (
-    // React.createElement("div", {className : "container"},
-    //     React.createElement("h4", {}, "From JavaScript : Notes Coming soon..."))
+  // const duplicateNotes = notes.map(note => {
+  //   return <NoteItem key={note.id} title={note.title} amount={note.amount} createdAt={note.createdAt}/> 
+  // })
 
+  
+  const onToggleForm = () => {
+    setShowForm(!showForm);
+  }
+  
+  const onSelectedYear = year => {
+    console.log("Selected Year : ", year);
+    setSelectedYear(year);
+  }
+  
+  const filteredNotes = notes.filter(note => note.createdAt.getFullYear().toString() === selectedYear)
+
+  return (
     <div className="container">
-      <AddNew onSaveNote={onSaveNote}/>
+      <div className="row">
+        <div className="col-4 offset-2">
+          <button onClick={onToggleForm} className="btn btn-dark btn-block btn-sm">
+            { showForm ? 'Hide Form' :  'Show Form'}
+            </button>
+        </div>
+        <div className="col-4">
+          <FilteredYear onSelectedYear={onSelectedYear} selectedYear={selectedYear} />
+        </div>
+      </div>
+      {showForm && <div className="backdrop"> </div>}
+      {showForm && <AddNew onSaveNote={onSaveNote} onToggleForm={onToggleForm} />}
       <br/>
       <hr/>
-      <div className="row">
-        <NoteItem
-          title={notes[0].title}
-          amount={notes[0].amount}
-          createdAt={notes[0].createdAt}
-        />
-        <NoteItem
-          title={notes[1].title}
-          amount={notes[1].amount}
-          createdAt={notes[1].createdAt}
-        />
-        <NoteItem
-          title={notes[2].title}
-          amount={notes[2].amount}
-          createdAt={notes[2].createdAt}
-        />
-        <NoteItem
-          title={notes[3].title}
-          amount={notes[3].amount}
-          createdAt={notes[3].createdAt}
-        />
+      <div className="row the-effect">
+        {/* {duplicateNotes} */}
+        {filteredNotes.map(note => <NoteItem key={note.id} title={note.title} amount={note.amount} createdAt={note.createdAt}/>)}
       </div>
     </div>
   );

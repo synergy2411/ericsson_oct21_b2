@@ -1,5 +1,7 @@
 import AddNoteForm from "./AddNoteForm";
 import { v4 } from 'uuid';
+import './AddNew.css';
+
 
 const AddNew = (props) => {
 
@@ -11,6 +13,7 @@ const AddNew = (props) => {
             createdAt : new Date(date)
         }
         props.onSaveNote(note);
+        props.onToggleForm()
     }
 
     return (
@@ -22,7 +25,7 @@ const AddNew = (props) => {
                     </div>
                     <div className="card-body">
                         {/* AddItemForm should present here.. */}
-                        <AddNoteForm onAddNewNote = {onAddNewNote} />
+                        <AddNoteForm onAddNewNote = {onAddNewNote} onToggleForm={props.onToggleForm} />
                     </div>
                 </div>
             </div>

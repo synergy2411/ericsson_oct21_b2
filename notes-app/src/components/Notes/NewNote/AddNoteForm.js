@@ -67,6 +67,7 @@ const AddNoteForm = (props) => {
               type="button"
               value="Cancel"
               className="btn btn-warning btn-block btn-sm"
+              onClick={() => props.onToggleForm()}
             />
           </div>
         </div>
