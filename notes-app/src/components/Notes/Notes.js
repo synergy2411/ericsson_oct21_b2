@@ -1,39 +1,53 @@
-import React from "react";
+import React, { useState } from "react";
+import AddNew from "./NewNote/AddNew";
 import NoteItem from "./NoteItem";
 
+const DUMMY_NOTES = [
+  {
+    id: "n1",
+    title: "grocery",
+    amount: 11.99,
+    createdAt: new Date(2020, 10, 12),
+  },
+  {
+    id: "n2",
+    title: "shopping",
+    amount: 13.99,
+    createdAt: new Date(2020, 1, 2),
+  },
+  {
+    id: "n3",
+    title: "insurance",
+    amount: 1.99,
+    createdAt: new Date(2021, 1, 1),
+  },
+  {
+    id: "n4",
+    title: "planting",
+    amount: 21.9,
+    createdAt: new Date(2019, 6, 5),
+  },
+];
+
 function Notes() {
-  let notes = [
-    {
-      id: "n1",
-      title: "grocery",
-      amount: 11.99,
-      createdAt: new Date(2020, 10, 12),
-    },
-    {
-      id: "n2",
-      title: "shopping",
-      amount: 13.99,
-      createdAt: new Date(2020, 1, 2),
-    },
-    {
-      id: "n3",
-      title: "insurance",
-      amount: 1.99,
-      createdAt: new Date(2021, 1, 1),
-    },
-    {
-      id: "n4",
-      title: "planting",
-      amount: 21.9,
-      createdAt: new Date(2019, 6, 5),
-    },
-  ];
+  
+  const [notes, setNotes] = useState(DUMMY_NOTES);
+
+  const onSaveNote = (note) => {
+    setNotes([note, ...notes])
+    // notes.push(note)
+    // notes = [note, ...notes];
+    // console.log(notes)
+  }
 
   return (
     // React.createElement("div", {className : "container"},
     //     React.createElement("h4", {}, "From JavaScript : Notes Coming soon..."))
 
     <div className="container">
+      <AddNew onSaveNote={onSaveNote}/>
+      <br/>
+      <hr/>
       <div className="row">
         <NoteItem
           title={notes[0].title}
