@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import './App.css';
 import ClassBasedComp from './components/demo/ClassBasedComp';
+import FormDemo from './components/demo/FormDemo';
 import Notes from './components/Notes/Notes';
 
 function App() {
@@ -10,10 +11,12 @@ function App() {
 
   return (
     <div>
-      <button onClick={() => { setShowComp(!showComp)}}>Toggle Comp</button>
+      <FormDemo />
+
+      {/* <button onClick={() => { setShowComp(!showComp)}}>Toggle Comp</button>
       { showComp && <ClassBasedComp title={title}/>}
       <br /> <hr />
-      <Notes />
+      <Notes /> */}
     </div>
   );
 }
