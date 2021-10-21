@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import AuthContext from "../../store/auth-context";
+
 import FilteredYear from "./FilterYear/FilteredYear";
 import AddNew from "./NewNote/AddNew";
 import NoteItem from "./NoteItem";
@@ -58,6 +60,10 @@ function Notes() {
   const filteredNotes = notes.filter(note => note.createdAt.getFullYear().toString() === selectedYear)
 
   return (
+    <AuthContext.Provider value={{
+      isLoggedIn : true,
+      onSelectedYear  
+    }}>
     <div className="container">
       <div className="row">
         <div className="col-4 offset-2">
@@ -66,7 +72,7 @@ function Notes() {
             </button>
         </div>
         <div className="col-4">
-          <FilteredYear onSelectedYear={onSelectedYear} selectedYear={selectedYear} />
+          <FilteredYear selectedYear={selectedYear} />
         </div>
       </div>
       {showForm && <div className="backdrop"> </div>}
@@ -78,6 +84,7 @@ function Notes() {
         {filteredNotes.map(note =><NoteItem title={note.title} amount={note.amount} createdAt={note.createdAt}/>)}
       </div>
     </div>
+    </AuthContext.Provider>
   );
 }
 

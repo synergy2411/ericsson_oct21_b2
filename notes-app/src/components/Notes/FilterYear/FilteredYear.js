@@ -1,7 +1,13 @@
+import { useContext } from "react";
+import AuthContext from "../../../store/auth-context";
+
 const FilteredYear = props => {
 
+    const context = useContext(AuthContext);
+
     const yearChangeHandler = event => {
-        props.onSelectedYear(event.target.value);
+        // props.onSelectedYear(event.target.value);
+        context.onSelectedYear(event.target.value)
     }
 
     return (
