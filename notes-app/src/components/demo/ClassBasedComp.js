@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import { Component, useState } from 'react';
 
 class ClassBasedComp extends Component {
     constructor(props){

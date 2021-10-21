@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useRef, useState } from "react";
 import { useFormik } from "formik";
 
 const FormDemo = () => {
@@ -15,8 +15,8 @@ const FormDemo = () => {
       if (!values.email.includes("@")) {
         errors.email = "*Email should be in proper format";
       }
-      if(values.age > 60){
-          errors.age = "*Age should be less than 60"
+      if (values.age > 60) {
+        errors.age = "*Age should be less than 60";
       }
       return errors;
     },
@@ -25,10 +25,31 @@ const FormDemo = () => {
     },
   });
 
+  // const usernameInputRef = React.createRef();
+  const usernameInputRef = useRef()
+
+  //   console.log(formik)
+
+  const usernameHandler = (event) => {
+      event.preventDefault()
+      console.log(usernameInputRef)     // {current : RefOfElement}
+      usernameInputRef.current.value = '';              // Bad Practice
+  }
   return (
     <div className="row">
       <div className="col-6 offset-3">
         <form onSubmit={formik.handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="username">Username :</label>
+            <input
+              type="text"
+              name="username"
+              className="form-control"
+              ref={usernameInputRef}
+            />
+            <button onClick={usernameHandler}>Get Value</button>
+          </div>
+
           <div className="form-group">
             <label htmlFor="email">Email : </label>
             <input
@@ -53,10 +74,9 @@ const FormDemo = () => {
               onChange={formik.handleChange}
               value={formik.values.age}
             />
-            {formik.errors.age ? 
-                <div className="alert alert-danger">{formik.errors.age}</div>:
-                null
-            }
+            {formik.errors.age ? (
+              <div className="alert alert-danger">{formik.errors.age}</div>
+            ) : null}
           </div>
 
           <div className="form-group">
