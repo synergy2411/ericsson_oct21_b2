@@ -199,3 +199,41 @@ html
 
 # Main job of React Library -> to render the UI, if model changes, update the UI accordingly.
 # Side Effect - XHR Call, reading, writing, changing the state etc
+
+# Formik - npm install formik
+    - Validating the form controls
+    - API for displaying messages
+
+# Ref - read the data from DOM
+# State - setState() - re-renders the UI
+
+
+
+
+
+# useEffect()
+- useEffect(CallbackFn) - (componentDidUpdate)
+    : executes after initial rendering and if state change, re-executes again for each state change
+
+- useEffect(CallbackFn, []) - (componentDidMount)
+    : executes only after initial rendering
+
+- useEffect(CallbackFn, [deps])
+    : executes after initial rendering, if dependency changed, useEffect will re-execute.
+
+- useEffect() => () = clean up Function (componentWillUnmount)
+    : Clean-up will NOT fire after initial rendering
+    : Clean-up function will fire after initial rendering, before the useEffect() callback for subsequent changes
+    : Always Executes prior to unmount the component
+
+
+# useReducer - to manage complex state
+    - Redux -> Actions -> Reducer -> State
+
+# Context API - eliminate "Props drilling"
+Parent -> Child1 => Child2 => Child3 => Child4 =>  
+
+# useContext() - Consume the Context API
+
+# When to use context vs props ?
+
