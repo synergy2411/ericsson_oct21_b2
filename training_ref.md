@@ -208,9 +208,6 @@ html
 # State - setState() - re-renders the UI
 
 
-
-
-
 # useEffect()
 - useEffect(CallbackFn) - (componentDidUpdate)
     : executes after initial rendering and if state change, re-executes again for each state change
@@ -227,7 +224,7 @@ html
     : Always Executes prior to unmount the component
 
 
-# useReducer - to manage complex state
+# useReducer() - to manage complex state in single component
     - Redux -> Actions -> Reducer -> State
 
 # Context API - eliminate "Props drilling"
@@ -237,3 +234,34 @@ Parent -> Child1 => Child2 => Child3 => Child4 =>
 
 # When to use context vs props ?
 
+
+
+# Routing
+
+# SPA
+ - Single Page App
+ - Better user experience / Interactive UI
+ - Don't reload / refresh browser
+ - Fast
+ - Less network traffic
+ - Page content changes depending in present URL
+
+- React | Angular | Vue | jQuery (AJAX - XMLHTTPRequest - Async Calls)
+- Javascript is Single Threaded -> XHR -> 2/3s
+
+
+ http://www.our-domain.com/notes => NotesComp
+ http://www.our-domain.com/posts => PostsComp
+
+
+ # React Router Terminologies -
+ - BrowserRouter
+ - Route : configure the component, if route changes
+ - Link / NavLink - Do not reload the browser
+ - Location
+ - History
+ - Redirect
+ - Prompt
+ - useParams()
+
+ # React-Router-DOM > npm install react-router-dom

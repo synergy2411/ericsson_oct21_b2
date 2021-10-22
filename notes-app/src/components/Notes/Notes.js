@@ -81,7 +81,7 @@ function Notes() {
       <hr/>
       <div className="row the-effect">
         {/* {duplicateNotes} */}
-        {filteredNotes.map(note =><NoteItem title={note.title} amount={note.amount} createdAt={note.createdAt}/>)}
+        {filteredNotes.map(note =><NoteItem key={note.id} title={note.title} amount={note.amount} createdAt={note.createdAt}/>)}
       </div>
     </div>
     </AuthContext.Provider>

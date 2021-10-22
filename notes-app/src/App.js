@@ -3,7 +3,12 @@ import './App.css';
 // import EffectHook from './components/demo/EffectHook';
 // import FormDemo from './components/demo/FormDemo';
 import Notes from './components/Notes/Notes';
-import ReducerHook from './components/demo/ReducerHook';
+// import ReducerHook from './components/demo/ReducerHook';
+
+import { Route, Switch } from 'react-router-dom';
+import Posts from './components/Posts/Posts';
+import PostDetail from './components/Posts/PostDetail';
+import Header from './components/Header/Header';
 
 function App() {
 
@@ -12,7 +17,24 @@ function App() {
 
   return (
     <div className="container">
-      <ReducerHook />
+
+      <Header />
+      <Switch>
+      <Route path="/notes">
+        <Notes />
+      </Route>
+      <Route path="/posts" exact>
+        <Posts />
+      </Route>
+      <Route path="/posts/:id">
+        <PostDetail />
+      </Route>
+      
+      </Switch>
+
+
+
+      {/* <ReducerHook /> */}
 
       {/* <EffectHook /> */}
 
@@ -21,7 +43,7 @@ function App() {
       {/* <button onClick={() => { setShowComp(!showComp)}}>Toggle Comp</button>
       { showComp && <ClassBasedComp title={title}/>}
       <br /> <hr />*/}
-      <Notes /> 
+      {/* <Notes />  */}
     </div>
   );
 }

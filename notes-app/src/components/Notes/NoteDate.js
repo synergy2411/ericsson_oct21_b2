@@ -5,8 +5,6 @@ const NoteDate = ( props ) => {
     
     const context = useContext(AuthContext)
 
-    console.log(context);
-
     let month = props.createdAt.toLocaleString('en-US', {month : 'long'})
     let day = props.createdAt.toLocaleString('en-US', {day : 'numeric'})
     let year = props.createdAt.getFullYear()
