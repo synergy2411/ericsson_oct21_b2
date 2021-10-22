@@ -5,7 +5,7 @@ import './App.css';
 import Notes from './components/Notes/Notes';
 // import ReducerHook from './components/demo/ReducerHook';
 
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 import Posts from './components/Posts/Posts';
 import PostDetail from './components/Posts/PostDetail';
 import Header from './components/Header/Header';
@@ -20,6 +20,9 @@ function App() {
 
       <Header />
       <Switch>
+        <Route path="/" exact>
+          <Redirect to="/notes" />
+        </Route>
       <Route path="/notes">
         <Notes />
       </Route>

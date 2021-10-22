@@ -252,16 +252,17 @@ Parent -> Child1 => Child2 => Child3 => Child4 =>
 
  http://www.our-domain.com/notes => NotesComp
  http://www.our-domain.com/posts => PostsComp
+ http://www.our-domain.com/posts?key=value
 
 
  # React Router Terminologies -
- - BrowserRouter
+ - BrowserRouter : to enable routing
  - Route : configure the component, if route changes
  - Link / NavLink - Do not reload the browser
- - Location
- - History
- - Redirect
- - Prompt
- - useParams()
+ - useLocation() -> Snapshot of active URL
+ - History -> HTML History object wrapper; navigate pages
+ - useParams() -> accessing the route paramter
+ - Redirect -> redirects user to other URL
+ - Prompt - prevent the accidental navigation
 
  # React-Router-DOM > npm install react-router-dom

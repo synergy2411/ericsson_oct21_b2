@@ -1,7 +1,17 @@
 import NoteDate from './NoteDate';
 import PropTypes from 'prop-types';
+import { useContext } from 'react';
+import { Redirect } from 'react-router';
+import AuthContext from '../../store/auth-context';
 
 const NoteItem = (props) => {
+
+  const context = useContext(AuthContext);
+
+  if(!context.isLoggedIn){
+    return <Redirect to="/posts" />
+  }
+
   return (
     <div className="col-sm-6 col-md-4">
       <div className="card">

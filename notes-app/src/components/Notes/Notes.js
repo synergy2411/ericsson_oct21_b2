@@ -28,7 +28,7 @@ const DUMMY_NOTES = [
   {
     id: "n4",
     title: "planting",
-    amount: "21.9",
+    amount: 21.9,
     createdAt: new Date(2019, 6, 5),
   },
 ];
@@ -53,12 +53,12 @@ function Notes() {
   }
   
   const onSelectedYear = year => {
-    console.log("Selected Year : ", year);
     setSelectedYear(year);
   }
   
   const filteredNotes = notes.filter(note => note.createdAt.getFullYear().toString() === selectedYear)
 
+  
   return (
     <AuthContext.Provider value={{
       isLoggedIn : true,
