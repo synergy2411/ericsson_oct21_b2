@@ -266,3 +266,6 @@ Parent -> Child1 => Child2 => Child3 => Child4 =>
  - Prompt - prevent the accidental navigation
 
  # React-Router-DOM > npm install react-router-dom
+
+
+ # to generate package.json > npm init
