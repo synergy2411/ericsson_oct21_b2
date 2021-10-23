@@ -282,4 +282,6 @@ Parent -> Child1 => Child2 => Child3 => Child4 =>
  - Reducer = (state, action) => newState
  - Store = holds state
 
- # npm install redux react-redux
+ # npm install redux react-redux 
+
+ # npm install redux-thunk

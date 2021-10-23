@@ -21,3 +21,13 @@ export function onSubtractCounter(value){
         value 
     }
 }
+
+export function subtractWithDelay(value){
+    return function(dispatch){
+        // Async task - XHR Call, timers, any Async Code write here
+        // fetch().then(response=>response.json()).then(result => dispatch(onResponseArrive(result)))
+        setTimeout(() => {
+            dispatch(onSubtractCounter(value))
+        }, 3000);
+    }
+}
