@@ -9,6 +9,7 @@ import { Route, Switch, Redirect } from 'react-router-dom';
 import Posts from './components/Posts/Posts';
 import PostDetail from './components/Posts/PostDetail';
 import Header from './components/Header/Header';
+import Counter from './components/Counter/Counter';
 
 function App() {
 
@@ -31,6 +32,9 @@ function App() {
       </Route>
       <Route path="/posts/:id">
         <PostDetail />
+      </Route>
+      <Route path="/counter">
+        <Counter />
       </Route>
       
       </Switch>

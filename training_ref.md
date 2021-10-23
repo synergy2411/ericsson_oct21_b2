@@ -269,3 +269,17 @@ Parent -> Child1 => Child2 => Child3 => Child4 =>
 
 
  # to generate package.json > npm init
+
+ App Optimization
+ Lazy Loading
+ Hooks
+ Deplayment
+ Testing
+
+
+ # Redux -
+ - Actions = { type : ""}
+ - Reducer = (state, action) => newState
+ - Store = holds state
+
+ # npm install redux react-redux
